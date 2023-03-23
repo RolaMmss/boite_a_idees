@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 def hello(request):
     return HttpResponse(f"""
-                        <h1> Hello Django ! </h1>""")
+                        <h1> Hello Django  from container!</h1>""")

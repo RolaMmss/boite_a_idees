@@ -1,0 +1,7 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+# @EXPLICIT
+asgiref==3.6.0
+Django==4.1.7
+sqlparse==0.4.3
