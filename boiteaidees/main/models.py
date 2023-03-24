@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 
 class Idee(models.Model):
     formulation = models.CharField(max_length=100)
-    detail = models.CharField(max_length=200, null=True)
+    detail = models.CharField(max_length=200)
     auteur = models.ForeignKey(User, on_delete=models.CASCADE)
-    # nb_vote_positif = 
+    # likes = models.IntegerField(default=0)
 
 class Votant(models.Model):
     votant = models.ForeignKey(User, on_delete=models.CASCADE)

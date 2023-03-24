@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h1>Idee List</h1>
+  {% comment %} <ul>
+    {% for idee in idee_list %}
+      <li>{{ idee.formulation }} - {{ idee.detail }}</li>
+    {% empty %}
+      <li>No idee yet.</li>
+    {% endfor %}
+  </ul>  {% endcomment %}
+
+  <table>
+    <tr>
+        <td>Idée</td>
+        <td>Auteur</td>
+        <td>Vote</td>
+    
+      <tr>
+            {% for idee in idee_list %}
+              <td>{{ idee.formulation }} - {{ idee.detail }}</td>
+            {% empty %}
+              <li>No idee yet.</li>
+            {% endfor %}
+        <td>{{ idee.auteur }}</td>
+        <td>{{ idee.vote }}</td>
+
+      </tr> 
+  </table>
+
+
+
+
+
+{% endblock content%}

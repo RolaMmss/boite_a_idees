@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    {% comment %} <p>{{ message }}</p>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" >Se connecter</button>
+    </form> {% endcomment %}
+    {% if message %}
+      {{ message }} 
+    {% endif %}
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" >Se connecter</button>
+    </form>
+    <p>Pas encore membre ? <a href="{% url 'signup' %}">Inscrivez-vous maintenant !</a></p>
+   
+{% endblock content %}
+
+
+{% comment %} <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}    
+    <button type="submit" >Log in</button>
+</form> {% endcomment %}

@@ -12,7 +12,7 @@ ENV PATH="opt/venv/bin:$PATH"
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-d
+
 ENV PYTHONUNBUFFERED 1
 
 COPY . /app

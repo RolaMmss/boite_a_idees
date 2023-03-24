@@ -1,0 +1,52 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} {%endblock title%}</title>
+    <link rel="stylesheet" href="{% static 'reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% block head %}{%endblock%}
+</head>
+<body>
+    <style>
+        body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS24BKJd_1ZY-ne1u6UbqwYaytDkS4WNk7uQA&usqp=CAU");
+        background-size: cover;
+        }
+    </style>
+    <nav>
+        <figure>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpLyZXymauqZJ-CA2pfQ6jkvnLkMXkyBROFA&usqp=CAU" alt="logo de notre site">
+        </figure> 
+        <ul>
+            <li><a href="{% url 'home' %}">Homepage</a></li>
+            <li><a href="{% url 'creer' %}">Créer une idée</a></li>
+            <li><a href="{% url 'liste' %}">Liste d'idées</a></li>
+
+
+
+            {% if user.is_authenticated%}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'signup' %}">Sign up</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+         
+    </nav>
+
+    {%  if user.is_authenticated %}
+        <p> You are connected as {{ request.user }}! </p>
+    {% endif %}
+ 
+{% block content %} {% endblock content %}
+    
+</body>
+</html>

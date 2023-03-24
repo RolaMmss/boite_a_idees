@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1(o!+m@w@fcqve@2we7^&1owwg#jyq+iq++ue--8p-a&-4&os9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','20.19.5.232']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'boiteaidees.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,3 +124,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LOGIN_REDIRECT_URL = 'signup/'
+# LOGOUT_REDIRECT_URL = '/'
+

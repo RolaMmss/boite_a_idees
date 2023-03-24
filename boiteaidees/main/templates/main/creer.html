@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% comment %} {% block title %}
+    <title> Créer une idée </title>
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Creer idee">
+</form>
+
+
+
+{% endblock content %} {% endcomment %}
+
+
+{% block content %}
+  <h1>Ajouter Une Idée</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}
